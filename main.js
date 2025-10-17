@@ -7,15 +7,21 @@ const nPases = isNaN(parseInt(pasesParam)) ? 1 : parseInt(pasesParam);
 const textoPases = nPases === 1 ? '1 pase' : `${nPases} pases`;
 
 document.getElementById('nombre').textContent = nombre;
-document.getElementById('pases').textContent = `Con mucho cariño hemos reservado ${textoPases} para ti.`;
+const pasesElement = document.getElementById('pases');
+if (pasesElement) {
+  pasesElement.textContent = `Con mucho cariño hemos reservado ${textoPases} para ti.`;
+}
 
 // Links
 const mapa = params.get('mapa') || '#';
 const regalos = params.get('regalos') || '#';
 const whatsapp = params.get('whatsapp') || '#';
-document.getElementById('btn-mapa').href = mapa;
-document.getElementById('btn-regalos').href = regalos;
-document.getElementById('btn-rsvp').href = whatsapp;
+const btnMapa = document.getElementById('btn-mapa');
+const btnRegalos = document.getElementById('btn-regalos');
+const btnRsvp = document.getElementById('btn-rsvp');
+if (btnMapa) btnMapa.href = mapa;
+if (btnRegalos) btnRegalos.href = regalos;
+if (btnRsvp) btnRsvp.href = whatsapp;
 
 // Countdown
 const app = document.getElementById('app');

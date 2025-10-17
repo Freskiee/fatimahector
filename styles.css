@@ -1,7 +1,7 @@
 
 :root{
   --overlay-1-x: 50%;
-  --overlay-1-y: 45%;
+  --overlay-1-y: 25%;
   --overlay-1-w: min(92vw, 780px);
 }
 
@@ -40,15 +40,45 @@ body{
   padding: clamp(8px, 2.5vw, 20px);
 }
 
+.nombres-pareja{
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: clamp(56px, 12vw, 110px);
+  letter-spacing: 0.12em;
+  font-weight: 300;
+  color: #e9fec3;
+  font-family: 'Cormorant', Georgia, 'Times New Roman', serif;
+  text-shadow: 0 3px 8px rgba(0,0,0,.3), 0 1px 3px rgba(255,255,255,.5);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+}
+.nombres-pareja .ampersand{
+  font-size: 0.6em;
+  font-style: italic;
+  font-weight: 300;
+}
+
 .nombre{
   margin: 0 0 0.4em;
-  font-size: clamp(24px, 5.5vw, 48px);
+  font-family: 'Cormorant', Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 7vw, 64px);
   letter-spacing: 0.02em;
   font-weight: 600;
+  color: #cbfa7a;
+  text-shadow: 0 2px 6px rgba(0,0,0,.4), 0 1px 3px rgba(255,255,255,.6);
 }
 .pases{
   margin: 0 0 1.2em;
   font-size: clamp(14px, 3.3vw, 20px);
+  color: #333;
+  text-shadow: 0 2px 6px rgba(0,0,0,.4), 0 1px 3px rgba(255,255,255,.8);
 }
 
 .botones{
@@ -77,29 +107,40 @@ body{
 .contador{
   display: grid;
   grid-template-columns: repeat(4, minmax(60px, 1fr));
-  gap: 10px;
+  gap: 12px;
   width: min(92vw, 520px);
   margin: 0 auto;
 }
 .contador div{
   display: grid;
   place-items: center;
-  background: rgba(255,255,255,.85);
-  border: 1px solid rgba(0,0,0,.08);
-  border-radius: 16px;
-  padding: 10px 6px;
+  background: rgba(233, 254, 195, 0.15);
+  border: 2px solid #e9fec3;
+  border-radius: 12px;
+  padding: 14px 8px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(233, 254, 195, 0.2);
 }
 .contador span{
-  font-size: clamp(20px, 5vw, 36px);
+  font-size: clamp(24px, 5.5vw, 42px);
   font-weight: 700;
   line-height: 1;
+  color: #e9fec3;
+  text-shadow: 0 2px 4px rgba(0,0,0,.5);
 }
 .contador small{
-  opacity: .7;
-  font-size: clamp(11px, 2.5vw, 12px);
+  opacity: .9;
+  font-size: clamp(11px, 2.5vw, 13px);
+  color: #e9fec3;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.page:first-child .overlay{ opacity: 0; }
+.page:first-child .overlay{ 
+  opacity: 1;
+}
 .page:first-child .overlay.loaded{
   animation: fadeIn .7s ease-out forwards;
 }
